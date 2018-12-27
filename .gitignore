@@ -55,3 +55,22 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Ignore OSX folder attributes
+.DS_Store
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore JetBrains RubyMine IDE settings
+/.idea
+
+# project
+*/__pycache__/
+media/
+static/
+my_project.dot
+*.sqlite3
+db.sqlite3
+migrations/
