@@ -15,7 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import *
+
+app_name = 'blog'
+
+# url 규칙
+# /user_id/ => post_list
+# /user_id/post/ => 위와 동일
+# /user_id/post/slug => post_detail
+
+# /post/create
+# /post/slug/update
+# /post/slug/delete
+
+# /contents/ => content_list
+# /content/99/ => content_detail
+
+# /content/99/update
+# /content/99/delete
+
+# /user_id/tags/ => tag_cloud
+# /user_id/tag/1 => tag_detail
+
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('', IndexView.as_view(), name="index"), # post list
+    # path('<int:author_id>/', PostListView.as_view(), name='post_list'),
+    path('<str:username>/', PostListView.as_view(), name='post_list'),
+    path('<str:username>/<int:pk>', PostDetailView.as_view(), name='post_detail'),
 ]

@@ -1,0 +1,10 @@
+{% load tagging_tags %}
+{% tags_for_object object as tags %}
+<p>author : {{ post.author }}</p>
+<p>category : {{ post.category }}</p>
+<p>title : {{ post.title }}</p>
+<p>created_date : {{ post.created_date }}</p>
+<p>tags : {{ tags }}</p>
+
+{% load disqus_tags %}
+{% disqus_show_comments %}

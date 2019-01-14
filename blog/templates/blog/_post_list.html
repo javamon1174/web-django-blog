@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index!!</title>
+</head>
+<body>
+<h1>포스트 리스트 뷰</h1>
+
+{% for post in post_list %}
+    <h5>작성자 : {{ post.author }}</h5>
+    <h5>카테고리 : {{ post.category }}</h5>
+    <h5>{{ post.title }}</h5>
+    <h5>{{ post.slug }}</h5>
+    <h5>{{ post.tag }}</h5>
+    <h5>{{ post.created_date }}</h5>
+    <hr>
+{% endfor %}
+</body>
+</html>
